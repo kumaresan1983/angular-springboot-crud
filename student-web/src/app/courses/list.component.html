@@ -1,0 +1,21 @@
+﻿<h1>Course</h1>
+<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Course</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width: 50%">Name</th>
+            <th style="width: 50%">Fee</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let course of courses">
+            <td><a routerLink="view/{{course.id}}">{{course.name}}</a></td>
+            <td>{{course.fees}}</td>
+        </tr>
+        <tr *ngIf="!courses">
+            <td colspan="4" class="text-center">
+                <span class="spinner-border spinner-border-lg align-center"></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
